@@ -1,0 +1,105 @@
+﻿.baner {
+    padding-top: 6em;
+    position: relative;
+    z-index: 101;
+    overflow: hidden;
+    font-family: monospace;
+    margin-bottom: 2em;
+    height: 660px;
+}
+
+    .baner img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+.MyDecor-1 img,
+.MyDecor-2 img {
+    margin-bottom: 4em;
+    width: auto;
+}
+
+.MyDecor-1 p,
+.MyDecor-2 p {
+    text-align: left;
+    margin: 0 1em;
+    /*margin-left: 100px;
+    margin-right: 20px;*/
+}
+
+.MyDecor-1,
+.MyDecor-2 {
+    width: 50%;
+    position: absolute;
+    z-index: 9999;
+    top: 93px;
+    text-align: center
+}
+
+.MyDecor-1 {
+    right: 0;
+}
+
+.Decorator-1,
+.Decorator-2 {
+    width: 100%;
+    position: absolute;
+    height: 60px;
+    background: #fff;
+    top: -67px;
+    z-index: 1;
+    left: -38px;
+}
+
+.Decorator-1 {
+    transform: rotate(208deg) scale(10) translate(72px);
+}
+
+.MyDecor-2 {
+    left: 0;
+}
+
+    .MyDecor-2 h2 {
+        font-size: 2.9rem;
+        font-weight: 700;
+        line-height: 2.523rem;
+        margin-bottom: 1em;
+    }
+
+.Decorator-2 {
+    transform: rotate(-208deg) scale(10) translate(72px);
+}
+
+.concept .img-concept {
+    right: 0;
+    width: 50%;
+    height: 360px;
+    position: absolute;
+}
+
+.MyDecor img {
+    max-width: 100%;
+    height: 360px;
+}
+
+.Decorator {
+    transform: rotate(-101deg) scale(10) translate(72px);
+    width: 100%;
+    position: absolute;
+    height: 30px;
+    background: #fff;
+    top: -67px;
+    z-index: 1;
+    left: -38px;
+}
+
+.concept {
+    padding-top: 6em;
+    position: relative;
+    z-index: 101;
+    overflow: hidden;
+    font-family: monospace;
+    margin-bottom: 2em;
+    height: 660px;
+}

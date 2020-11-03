@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DA1.Models.ProductDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:50px; padding-top:100px">
+
+    <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">ProductDetail</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #1cc88a!important;">
+                    @Html.DisplayNameFor(model => model.ProductIdDetail)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff00dc!important;">
+                    @Html.DisplayNameFor(model => model.Displacement)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff0000!important;">
+                    @Html.DisplayNameFor(model => model.Maxpower)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #00ffff!important;">
+                    @Html.DisplayNameFor(model => model.Topspeed)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff6a00!important;">
+                    @Html.DisplayNameFor(model => model.TAcceleration)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #4800ff!important;">
+                    @Html.DisplayNameFor(model => model.Supplier)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff6a00!important;">
+                    @Html.DisplayNameFor(model => model.Invented)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #00ffff!important;">
+                    @Html.DisplayNameFor(model => model.Product)
+                </th>
+                <th style="border:none;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.ProductIdDetail)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Displacement)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Maxpower)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Topspeed)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.TAcceleration)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Supplier.SupplierID)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Invented)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+                    <td style="vertical-align:middle; border:none">
+                        <a asp-action="Edit" asp-route-id="@item.ProductIdDetail">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ProductIdDetail">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ProductIdDetail">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

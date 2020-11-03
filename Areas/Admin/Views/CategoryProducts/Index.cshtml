@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DA1.Models.Domain.CategoryProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+    <div style="margin-left:50px; padding-top:100px">
+
+        <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">Category</h1>
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <form style="color: #333333">
+            <table style="margin-top: 25px; padding:20px; font-size:12px">
+                <tr>
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #1cc88a!important;"> @Html.DisplayNameFor(model => model.CategoryID)</th>
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #1cc88a!important;"> @Html.DisplayNameFor(model => model.CategoryName)</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="padding:20px; border: 1px solid #e5e5e5;">
+                            @Html.DisplayFor(modelItem => item.CategoryID)
+                        </td>
+                        <td style="padding:20px; border: 1px solid #e5e5e5;">
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.CategoryID">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.CategoryID">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.CategoryID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </form>
+    </div>
+

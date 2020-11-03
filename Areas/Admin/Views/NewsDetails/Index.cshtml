@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DA1.Models.Domain.NewsDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+    <div style="margin-left:50px; padding-top:100px">
+
+        <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">News</h1>
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #1cc88a!important;">
+                        @Html.DisplayNameFor(model => model.News.Title)
+                    </th>
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff00dc!important;">
+                        @Html.DisplayNameFor(model => model.Content)
+                    </th>
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff0000!important;">
+                        @Html.DisplayNameFor(model => model.Nameposted)
+                    </th>
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #00ffff!important;">
+                        @Html.DisplayNameFor(model => model.CreateDate)
+                    </th>
+                    @*<th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff6a00!important;">
+                        @Html.DisplayNameFor(model => model.News.NewsImg)
+                    </th>*@
+                    <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #4800ff!important;">
+                        @Html.DisplayNameFor(model => model.News)
+                    </th>
+                    <th style="border:none;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                            @Html.DisplayFor(modelItem => item.News.Title)
+                        </td>
+                        <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                            @Html.DisplayFor(modelItem => item.Content)
+                        </td>
+                        <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                            @Html.DisplayFor(modelItem => item.Nameposted)
+                        </td>
+                        <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                            @Html.DisplayFor(modelItem => item.CreateDate)
+                        </td>
+                        @*<td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                            <img style="max-height:120px" src="~/Img/news/@item.News.NewsImg" />
+                        </td>*@
+                        <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                            @Html.DisplayFor(modelItem => item.News.NewsID)
+                        </td>
+                        <td style="vertical-align:middle; border:none">
+                            <a asp-action="Edit" asp-route-id="@item.NewsDetailID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.NewsDetailID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.NewsDetailID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,63 @@
+﻿/* ******* Contact ******* */
+
+.container-h1 {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.contact-left {
+    background-image: url(../Img/contact.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
+    border: 1px solid #000;
+    border-radius: 0;
+    font-family: monospace;
+}
+
+    #contact .form-group input:hover,
+    #contact .form-group textarea:hover {
+        border-color: #ababee;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    }
+
+#contact .contact-buttons input,
+#contact .contact-buttons input:focus {
+    color: #fff;
+    background-color: #182c39;
+    margin: 20px auto 40px auto;
+    border-radius: 0;
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid #182c39;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+    #contact .contact-buttons input:hover {
+        color: #182c39;
+        background-color: #fff;
+    }
+
+#contact .left-box {
+    background-color: rgba(211, 208, 203, 0.54);
+    margin: 40px 20px;
+    font-size: 15px;
+    text-transform: none;
+    line-height: 1.8em;
+    font-weight: 500;
+    padding: 30px 50px;
+    color: #000;
+    font-family: monospace;
+}
+
+    #contact .left-box .span-contact {
+        color: #000;
+        font-weight: 700;
+        padding-right: 20px;
+        font-size: 17px;
+    }

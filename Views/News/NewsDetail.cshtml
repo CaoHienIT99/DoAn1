@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "NewsDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DA1.Models.Domain.NewsDetail
+    <div class="container" style="padding-top:100px; padding-bottom: 70px">
+        <div class="col-lg-12  col-md-10" style="max-width: 1170px">
+            <div>
+                <h1 style="font-size:40px; font-weight:700; color: #353535; line-height: 1.2 ">@Html.DisplayFor(model => model.News.Title)</h1>
+            </div>
+            <div>
+                <img src="~/Img/news/@Html.DisplayFor(model=>model.News.NewsImage)" style="max-width:100%" />
+            </div>
+            <div class="col-12 col-md-10" style="padding-top:15px; max-width: 100%">
+                <span style="font-size: 19px; color: #727171">@Html.DisplayFor(model => model.CreateDate)</span>
+            </div>
+            <div class="col-12" style="padding:30px;">
+                <p style="font-size: 17px; color: #353535">
+                    @Html.DisplayFor(model => model.Content)
+                </p>
+            </div>
+            <div class="col-12 col-md-10" style="padding-top:15px; max-width: 100%">
+                <span style="font-size: 19px; color: #727171; float: right"> Cre: @Html.DisplayFor(model => model.Nameposted)</span>
+            </div>
+
+        </div>
+    </div>

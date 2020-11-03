@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewData["Title"] = "ProductDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model DA1.Models.ProductDetail
+<section class="car-details spad" style="padding-bottom: 70px; padding-top: 100px; ">
+
+    <div class="container" style="max-width: 1170px;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; box-sizing: border-box">
+            <div class="col-lg-9">
+                <div class="car__details__pic">
+                    <div class="car__details__pic__large" style="margin-bottom:20px;">
+                        <img class="car-big-img" src="~/Img/model/@Html.DisplayFor(model => model.Product.ProductImage)" alt="" style="min-width: 100%; max-width: 100%">
+                    </div>
+                </div>
+
+                <div class="car__details__tab" style="box-sizing:border-box">
+                    <div class="tab-content" style="padding-top: 45px; text-align: center;">
+                        <div class="tech-section main-info">
+                            <h2 class="tech-section-title title-primary" style="font-size: 40px; font-weight: 700; color: #353535;">
+                                TECHNICAL SPECIFICATIONS
+                            </h2>
+                            <ul class="tech-data">
+                                <li class="d-md-flex align-items-center" style=" border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                                    <span class="label" style="font-size: 17px; line-height: 30px; color: #6A6B7C">
+                                        Displacement
+                                    </span>
+                                    <span class="data ml-md-5 flex-fill" style=" font-size: 24px; line-height: 30px; color: #353535; text-align: right; padding-bottom: 10px; padding-top: 10px">
+                                        @Html.DisplayFor(model => model.Displacement)
+                                    </span>
+                                </li>
+                                <li class="d-md-flex align-items-center" style=" border-bottom: 2px solid rgba(0, 0, 0, 0.1);">
+                                    <span class="label" style="font-size: 17px; line-height: 30px; color: #6A6B7C">
+                                        Max. power
+                                    </span>
+                                    <span class="data ml-md-5 flex-fill" style=" font-size: 24px; line-height: 30px; color: #353535; text-align: right; padding-bottom: 10px; padding-top: 10px">
+                                        @Html.DisplayFor(model => model.Maxpower)
+                                    </span>
+                                </li>
+                                <li class="d-md-flex align-items-center" style=" border-bottom: 2px solid rgba(0, 0, 0, 0.1);">
+                                    <span class="label" style="font-size: 17px; line-height: 30px; color: #6A6B7C">
+                                        Top speed
+                                    </span>
+                                    <span class="data ml-md-5 flex-fill" style=" font-size: 24px; line-height: 30px; color: #353535; text-align: right; padding-bottom: 10px; padding-top: 10px">
+                                        @Html.DisplayFor(model => model.Topspeed)
+                                    </span>
+                                </li>
+                                <li class="d-md-flex align-items-center" style=" border-bottom: 2px solid rgba(0, 0, 0, 0.1);">
+                                    <span class="label" style="font-size: 17px; line-height: 30px; color: #6A6B7C">
+                                        Acceleration 0-100 km/h (MPH 0-62)
+                                    </span>
+                                    <span class="data ml-md-5 flex-fill" style=" font-size: 24px; line-height: 30px; color: #353535; text-align: right; padding-bottom: 10px; padding-top: 10px">
+                                        @Html.DisplayFor(model => model.TAcceleration)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="car__details__sidebar" style="background-color: #f7f7f7; padding: 25px 30px 20px;">
+                    <div class="car__details__sidebar__model" style="box-sizing:border-box;">
+                        <p style="font-size: 25px; font-weight: 700; text-align:center; color: #353535; border-bottom: 2px solid rgba(0, 0, 0, 0.1);">
+                            @Html.DisplayFor(model => model.Product.ProductName)
+                        </p>
+                        <a class="primary-btn" style="display: block; text-align: center; border-radius: 0; padding: 12px 0 12px; color: #ffffff; font-weight: 700; background: #db2d2e">
+                            Get Today Is Price
+                        </a>
+                        <ul style="margin-bottom: 30px;padding:0; margin:0;  border-bottom: 2px solid rgba(0, 0, 0, 0.1);">
+                            <li style="font-size:15px; color: #727171;  line-height: 36px; overflow:hidden ">
+                                Price
+                                <span style="color: #353535; font-weight: 700; float: right; font-size: 20px;">
+                                    $@Html.DisplayFor(model => model.Product.ProductPrice)
+                                    </p>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="car__details__sidebar__payment" style="box-sizing:border-box">
+                        <ul style="margin-bottom: 30px;padding:0; margin:0;">
+                            <li style="font-size:15px; color: #727171;  line-height: 36px; overflow:hidden ">
+                                <span style="color: #353535; font-weight: 700; float: right">
+                                    @Html.DisplayFor(model => model.Invented)
+                                    </p>
+                                </span>
+                                Invented
+                            </li>
+                            <li style="font-size:15px; color: #727171;  line-height: 36px; overflow:hidden ">
+                                <span style="color: #353535; font-weight: 700; float: right">
+                                    @Html.DisplayFor(model => model.Supplier.SupplierName)
+                                </span>
+                                Supplier
+                            </li>
+                            <li style="font-size:15px; color: #727171;  line-height: 36px; overflow:hidden ">
+                                <span style="color: #353535; font-weight: 700; float: right">
+                                    @Html.DisplayFor(model => model.Description)
+                                    </p>
+                                </span>
+                                Status
+                            </li>
+                        </ul>
+                     
+                            <a asp-controller="Cart" asp-action="Buy" asp-route-id="ProductId" class="primary-btn" style="display:block; border-radius: 0; text-align: center; margin-bottom: 10px; padding: 12px 0 10px; font-size: 15px; color: #727171; font-weight:700; background: #ffffff">
+                                <i class="fa fa-credit-card" style="margin-right: 5px; font: normal normal normal 14px/1 FontAwesome; font-size:inherit"></i>
+                                Express Purchase
+                            </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>

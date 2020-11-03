@@ -1,0 +1,79 @@
+﻿@model DA1.Models.Domain.ProductToCart
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="container" style="padding-top:100px; box-sizing:border-box; width:1170px;">
+
+        <table class="table" style="margin-bottom:36px">
+            <tr style="font-weight:bold; font-size:1em; text-indent:0; color:#ffffff">
+                <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">
+                    Name
+                </th>
+                <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">
+                    Image
+                </th>
+                <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">
+                    Price
+                </th>
+                <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">
+                    Quantity
+                </th>
+                <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">
+                    Sub Total
+                </th>
+                <th style="border:none"></th>
+            </tr>
+            @foreach (var item in ViewBag.cart)
+            {
+                <tr style="font-weight:400; font-size:14px; line-height: 1.4; letter-spacing:2px; text-transform:uppercase">
+                    <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); ">
+                        @item.Product.ProductName
+                    </td>
+                    <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); ">
+                        <img style="max-width:200px; max-height:300px" src="~/Img/model/@item.Product.ProductImage" />
+                    </td>
+                    <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); ">
+                        @item.Product.ProductPrice
+                    </td>
+                    <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); ">
+                        @item.Quantity
+                    </td>
+                    <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); ">
+                        @(item.Product.ProductPrice * item.Quantity)
+                    </td>
+                    <td style="vertical-align: middle; border:none">
+                        <a asp-controller="cart" asp-action="remove" asp-route-id="@item.Product.ProductId" style="color:#ff0000; text-decoration:none; text-transform:uppercase; font-size:1rem">Remove</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div style="border-top: 1.5px solid #e5e5e5">
+            <h3 style="font-weight:500; text-transform:uppercase; line-height:1.5; letter-spacing:2px; padding-top:20px">Cart</h3>
+            <table class="table" style="width:250px;">
+                <tr style="font-weight:bold; font-size:1em; text-indent:0; color:#ffffff; text-align:center">
+                    <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">Total</th>
+                </tr>
+                <tr style="font-weight:400; font-size:14px; line-height: 1.4; letter-spacing:2px; text-transform:uppercase">
+                    <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); text-align:center ">
+                        @ViewBag.total
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div style="text-align:left">
+            <a asp-controller="Cart" asp-action="Pay" class="btn btn-primary" style=" color:#fff; background:rgba(17, 17, 17, 0.8); box-shadow:none;font-size: 12px; font-weight:400; letter-spacing:2px; text-transform:uppercase"> Check Out</a>
+            <br>
+            <div style="margin-top: 10px">
+                <a asp-controller="Product" asp-action="Product" style="color:#808080; text-transform:uppercase; text-decoration:none; "> < - Continue Shopping</a>
+
+            </div>
+        </div>
+    </div>
+
+
+

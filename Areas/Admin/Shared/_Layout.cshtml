@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/MainStyle.css" />
+    <link rel="stylesheet" href="~/css/Contact.css" />
+    <link rel="stylesheet" href="~/css/model.css" />
+    <link rel="stylesheet" href="~/css/product.css" />
+    <link rel="stylesheet" href="http://sstatic.net/so/all.css?v=6184">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark slider" style="background-color: #000000d4!important;">
+            <a class="navbar-brand logo" style="margin-left: 0 !important" asp-area="" asp-controller="Lambor" asp-action="Index"> <img src="~/Img/logoSpeed.png" /> </a>
+            <div class="collapse navbar-collapse " id="my-nav-bar">
+                <ul class="navbar-nav" style="margin-left: 0% !important;">
+                    <li style="color: rgba(255, 255, 255, 0.5);"> TRÙM HUFLIT</li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Account" asp-action="Index">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Products" asp-action="Index">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="ProductDetails" asp-action="Index">ProductDetail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Suppliers" asp-action="Index">Supplier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="CategoryProducts" asp-action="Index">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="News" asp-action="Index">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="NewsDetails" asp-action="Index">NewsDetails</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Orders" asp-action="Index">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="OrderDetails" asp-action="Index">OrderDetails</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Logout","Login")" class="btn btn-warning">Logout</a>
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

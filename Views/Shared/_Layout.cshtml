@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Shiba Speed </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/MainStyle.css" />
+    <link rel="stylesheet" href="~/css/Contact.css" />
+    <link rel="stylesheet" href="~/css/model.css" />
+    <link rel="stylesheet" href="~/css/product.css" />
+    <link rel="stylesheet" href="http://sstatic.net/so/all.css?v=6184">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark slider" style="background-color: #000000d4!important;">
+            <a class="navbar-brand logo" style="margin-left:10%;" asp-area="" asp-controller="Lambor" asp-action="Index"> <img src="~/Img/logoSpeed.png" /> </a>
+            <div class="collapse navbar-collapse " id="my-nav-bar">
+                <ul class="navbar-nav" style="margin-left: 0% !important;">
+                    <li class="nav-item" style="margin-left: 12em">
+                        <a class="nav-link" asp-area="" asp-controller="Product" asp-action="Product">Product</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 5em">
+                        <a class="nav-link" asp-area="" asp-controller="Lambor" asp-action="About">About</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 5em">
+                        <a class="nav-link" asp-area="" asp-controller="News" asp-action="News">News</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 5em">
+                        <a class="nav-link" asp-area="" asp-controller="Lambor" asp-action="Contact">Contact</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 5em">
+                        <div>
+                            <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index" style="font: normal normal normal 14px/1 FontAwesome; font-size: 23px;">
+                                <i class="far fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li style="margin-left:8em; ">
+                        <form method="post" action="@Url.Action("Search", "Product")" style="position:absolute; box-sizing:border-box; display: block; width:250px">
+                            <input type="text" id="search" name="search" value="Search" placeholder="Search..." style="overflow: visible; height: 46px; width: 100%; font-size: 15px; color: #727171; padding-left: 20px; border: 1px solid #ebebeb; background: #ffffff;">
+                            <button type="submit" style="cursor: pointer; font-size: 14px; color: #AAAAB3; position: absolute; right: 0; top: 0; background: transparent; border: none; height: 100%; padding: 0 15px;">
+                                <i class="fa fa-search" style="display: inline-block; font: normal normal normal 14px/1 FontAwesome; text-rendering: auto; "></i>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!--END HEADER-->
+    <footer class="container-fluid" style="background-color: #000000d4!important; position:relative; bottom: 0;">
+        <div class="row no-gutters">
+            <div class="col-xl-10 offset-xl-1">
+                <div class="content">
+                    <div class="d-flex text-left" style="padding-top: 1em;">
+                        <a class="logo-footer"><img src="~/Img/logoSpeed.png" alt="Lamborghini logo" style="width: 70px;"></a>
+                        <div>
+                            <ul class="text-uppercase">
+                                <li class="mr-4 mr-lg-5 nowrap"><a  asp-area="" asp-controller="Lambor" asp-action="About" class="under-line"><span>About</span></a></li>
+                                <li class="mr-4 mr-lg-5 nowrap"><a  asp-area="" asp-controller="Lambor" asp-action="News" class="under-line"><span>News</span></a></li>
+                                <li class="mr-4 mr-lg-5 nowrap"><a  asp-area="" asp-controller="Lambor" asp-action="Product" class="under-line"><span>Product</span></a></li>
+                                <li class="mr-4 mr-lg-5 nowrap"><a  asp-area="" asp-controller="Lambor" asp-action="Contact" class="under-line"><span>Contact US</span></a></li>
+                            </ul>
+                            <p style="color: white;margin-top: 20px;margin-left: 5em;">©ShibaSpeed - All Rights Reserved. Designed by Mo</p>
+
+                        </div>
+                        <div class="social" style="margin-left:10%;">
+                            <a href="" target="_black" class="fa fa-facebook"></a>
+                            <a href="" target="_black" class="fa fa-twitter"></a>
+                            <a href="" target="_black" class="fa fa-youtube-play"></a>
+                            <a href="" target="_black" class="fa fa-instagram"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--ENd FOOTER-->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

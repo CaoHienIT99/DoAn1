@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "Urus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<DA1.Models.Product>
+
+
+<div style="padding-top:77px">
+    <div class="cta__item set-bg" style=" background-image: url(https://scontent.fvca1-1.fna.fbcdn.net/v/t1.0-9/99070182_249590282797076_4775822166488776704_o.jpg?_nc_cat=102&amp;_nc_sid=730e14&amp;_nc_ohc=WOXCmRJuI_EAX_9AVze&amp;_nc_ht=scontent.fvca1-1.fna&amp;oh=88d5febef566843307eaab627d3f7221&amp;oe=5F30683B); background-repeat: no-repeat; padding: 70px 0 60px; background-size: cover; background-position: top center;">
+        <div class="container" style="width:100%; padding-right:15px; padding-left:15px; margin-right:auto; margin-left: auto">
+            <div class="row" style="display:flex; flex-wrap: wrap; margin-left: -15px; margin-right:-15px;">
+                <div class="col-lg-12 text-center" style="text-align: center !important; flex: 0 0 100%; max-width: 100%; position: relative; width: 100%; padding-right: 15px; padding-left: 150px;">
+                    <div class="breadcrumb__text">
+                        <h2 style="color: #ffffff; font-weight: 700; font-size: 46px; margin-bottom: 6px; margin:0">
+                            Our News
+                        </h2>
+                        <div class="breadcrumb__links" style="text-align: center !important">
+                            <a asp-controller="lambor" asp-action="Index" style="font-size: 15px; color: #ffffff; margin-right: 18px; display: inline-block; position: relative; text-decoration: none">
+                                <i class="fa fa-home" style="color: #db2d2e; margin-right: 5px">
+                                </i>
+                                Home &gt;
+                            </a>
+                            <span style="font-size: 15px; color: #727171; display: inline-block">
+                                Car Listing
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="car spad" style="padding-bottom: 120px; padding-top:100px;">
+    <div class="container" style="max-width: 1170px;">
+        <div class="row" style="display:flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">
+            <div class="col-lg-3" style="flex: 0 0 25%; max-width: 25%; position: relative; width: 100%; padding-right: 15px; padding-left: 15px;">
+                <div class="car__sidebar" style="background: #f7f7f7; padding: 30px; box-sizing:border-box; ">
+                    <div class="car__filter" style="box-sizing: border-box; display: block">
+                        <h5>
+                            Model
+                        </h5>
+                        <div class="dropdown" style="position:relative; padding-top: 10px">
+                            <a asp-controller="Product" asp-action="Aventador" class="btn btn-secondary" style="background-color:#ffffff !important; color: #727171; width:100% ">
+                                Aventador
+                            </a>
+                        </div>
+                        <div class="dropdown" style="position:relative; padding-top: 10px">
+                            <a asp-controller="Product" asp-action="Huracán" class="btn btn-secondary" style="background-color:#ffffff !important; color: #727171; width:100% ">
+                                Huracán
+                            </a>
+                        </div>
+                        <div class="dropdown" style="position:relative; padding-top: 10px">
+                            <a asp-controller="Product" asp-action="Urus" class="btn btn-secondary" style="background-color:#ffffff !important; color: #727171; width:100% ">
+                                Urus
+                            </a>
+                        </div>
+                        <div class="dropdown" style="position:relative; padding-top: 10px">
+                            <a asp-controller="Product" asp-action="LimitedSeries" class="btn btn-secondary" style="background-color:#ffffff !important; color: #727171; width:100% ">
+                                LimitedSeries
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9" style="flex: 0 0 75%; max-width: 75%; position: relative; width: 100%; padding-right: 15px; padding-left: 15px; padding-bottom: 30px">
+                <div class="row" style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-4" style="    flex: 0 0 33.333333%;     max-width: 33.333333%; position: relative; width: 100%; padding-right: 15px; padding-left: 15px;">
+                            <div class="owl-item active" style="width: 262.5px;">
+                                <img src="~/img/model/@item.ProductImage" alt="" style="max-width:100%; height:175px">
+                            </div>
+                            <div class="car__item__text" style="border: 1px solid #ebebeb; box-sizing:border-box; padding: 20px 15px 14px 15px; ">
+                                <div class="car__item__text__inner" style="box-sizing: border-box;">
+                                    <div class="label-date" style="display: inline-block; font-size: 13px; color: #323232; font-weight: 700; padding: 2px 15px 1px; border: 1px solid #ebebeb; border-radius: 2px; box-sizing: border-box; line-height: 1.2;">
+                                        @item.Category.CategoryName
+                                    </div>
+                                    <h5 style="margin-top: 10px; margin-bottom: 14px; font-size: 18px; margin: 0; color: #111111; font-weight: 700; font-family: sans-serif; line-height: 1.2; padding-top: 10px; padding-bottom: 10px;">
+                                        @item.ProductName
+                                    </h5>
+
+                                    <ul style="padding: 0; margin:0; box-sizing: border-box; padding-bottom: 20px;">
+                                        <li style="font-size:15px; color: rgb(141, 141, 141); font-weight: 700; position: relative; display:inline-block; list-style:none; box-sizing: border-box;  ">
+                                            <span style="color: rgb(50, 50, 50);">Price</span>
+                                            $@item.ProductPrice
+                                        </li>
+                                    </ul>
+
+                                    <div class="car__item__price" style="position: relative;box-sizing:border-box">
+                                        <a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId"><span class="car-option" style="font-size: 15px; color: rgb(255, 255, 255); font-weight: 700; display: inline-block; padding: 12px 22px 10px; background: rgb(73, 113, 255); border-radius: 2px 0px 0px 2px; width:40%; margin-right:15px; margin-left: 10px;">Detail</span></a>
+
+                                        <a asp-controller="Cart" asp-action="Buy" asp-route-id="@item.ProductId"><span class="car-option" style="font-size: 15px; color: rgb(255, 255, 255); font-weight: 700; display: inline-block; padding: 12px 22px 10px; background: #db2d2e; border-radius: 2px 0px 0px 2px; width:40%; text-align: center">Buy</span></a>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="pagination__option" style="padding-top:10px; ">
+                    @for (int i = 0; i < ViewBag.count; i++)
+                    {
+                        <a href="@Url.Action("Product", "Product", new { begin=i})" class="active" style="border-color: #db2d2e; color: #353535; display: inline-block; height: 50px; width:50px; font-size: 18px; font-weight: 700; border: 1px solid #ebebeb; border-radius: 2px; line-height: 50px; text-align: center; margin-right: 6px; transition: all, 0.3s">
+                            @i
+                        </a>}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

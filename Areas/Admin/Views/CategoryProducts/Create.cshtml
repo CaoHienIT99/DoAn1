@@ -1,0 +1,35 @@
+﻿@model DA1.Models.Domain.CategoryProduct
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:50px; padding-top:100px;  max-width:1170px; padding-bottom:100px">
+
+    <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">Create</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <table style="margin-top:50px; padding: 20px; text-align: center">
+                    <tr>
+                        <th asp-for="CategoryName" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #1cc88a!important;">User Name</th>
+                        <td> <input asp-for="CategoryName" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                        <td><span asp-validation-for="CategoryName" class="text-danger"></span></td>
+                    </tr>
+
+                </table>
+                <div class="form-group" style="padding-top:2.5em">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a asp-action="Index"> Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+

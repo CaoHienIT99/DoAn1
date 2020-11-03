@@ -1,0 +1,63 @@
+﻿@model DA1.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:50px; padding-top:100px;  max-width:1170px; padding-bottom:100px">
+
+    <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">Create</h1>
+
+    <h4 style="text-decoration: none; text-transform: uppercase; font-size: 50px; font-weight: 800; ">Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ProductName" class="control-label" style="padding:20px;  border-left: .25rem solid #1cc88a!important;"></label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductQuantity" class="control-label" style="padding:20px; border-left: .25rem solid #ff00dc!important;"></label>
+                    <input asp-for="ProductQuantity" class="form-control" />
+                    <span asp-validation-for="ProductQuantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductImage" class="control-label" style="padding:20px; border-left: .25rem solid #ff0000!important;"></label>
+                    <input asp-for="ProductImage" class="form-control" type="file" />
+                    <span asp-validation-for="ProductImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductPrice" class="control-label" style="padding:20px;  border-left: .25rem solid #00ffff!important;"></label>
+                    <input asp-for="ProductPrice" class="form-control" />
+                    <span asp-validation-for="ProductPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Discount" class="control-label" style="padding:20px; border-left: .25rem solid #ff6a00!important;"></label>
+                    <input asp-for="Discount" class="form-control" />
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CreateDate" class="control-label" style="padding:20px;border-left: .25rem solid #4800ff!important;"></label>
+                    <input asp-for="CreateDate" class="form-control" />
+                    <span asp-validation-for="CreateDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label" style="padding:20px;border-left: .25rem solid #ff6a00!important;"></label>
+                    <select  asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>

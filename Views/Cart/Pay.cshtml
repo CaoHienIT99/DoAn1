@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewData["Title"] = "Pay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="width:1170px;">
+    <div class="row" style="box-sizing: border-box;padding-top:100px; ">
+        <div class="col-sm-10" style="margin-left:8.33333333%; width: 83.33333333%; float:left">
+            <h1 style="margin: 0 0 70px; color: #111; font-size:30px; font-weight:400; text-align:center; letter-spacing:4px;text-transform:uppercase; line-height: 1.4">
+                CHECK OUT
+            </h1>
+        </div>
+    </div>
+    <hr style="border-top: 1px solid #a09f9f; width: 50%; margin: auto; padding-top:10px!important" />
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6" style="border-right: 1px solid #a09f9f">
+            @using (Html.BeginForm("Pay", "Cart", FormMethod.Post))
+            {
+                <div>
+                    <h3 style="font-weight:400; line-height: 1.4; font-size:24px;margin-top:20px; margin-bottom:10px; font-family:inherit; text-align:center">
+                        Information
+                    </h3>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label style="font-weight:normal; display:block; margin-bottom:5px; max-width:100%"> First Name</label>
+                            <input name="FirstName" required type="text" class="form-control" style="height: 33px; padding: 6px 12px; border: 1px solid #eaeaea; border-radius: 2px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" />
+                        </div>
+
+                        <div class="col">
+                            <label style="font-weight:normal; display:block; margin-bottom:5px; max-width:100%"> Last Name</label>
+                            <input name="LastName" required type="text" class="form-control" style="height: 33px; padding: 6px 12px; border: 1px solid #eaeaea!important; border-radius: 2px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label style="font-weight:normal; display:block; margin-bottom:5px; max-width:100%">Address</label>
+                    <input name="Address" required type="text" class="form-control" style="height: 33px; padding: 6px 12px; border: 1px solid #eaeaea!important; border-radius: 2px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" />
+                </div>
+                <div class="form-group">
+                    <label style="font-weight:normal; display:block; margin-bottom:5px; max-width:100%">Phone Number</label>
+                    <input name="PhoneNumber" required type="text" class="form-control" style="height: 33px; padding: 6px 12px; border: 1px solid #eaeaea!important; border-radius: 2px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" />
+                </div>
+                <div class="form-group">
+                    <label style="font-weight:normal; display:block; margin-bottom:5px; max-width:100%">Email</label>
+                    <input name="Email" required type="text" class="form-control" style="height: 33px; padding: 6px 12px; border: 1px solid #eaeaea!important; border-radius: 2px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style=" color:#fff; background:rgba(17, 17, 17, 0.8); box-shadow:none;font-size: 12px; font-weight:400; letter-spacing:2px; text-transform:uppercase; text-align:center">Payment</button>
+                </div>
+            }
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <form>
+                <div>
+                    <h3 style="font-weight:400; line-height: 1.4; font-size:24px;margin-top:20px; margin-bottom:10px; font-family:inherit; text-align:center">
+                        Order Product
+                    </h3>   
+                </div>
+                <div>
+                    <table style="width:100%; margin-top:2.5em">
+
+                        <tr style="padding:20px">
+                            <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080; width:50%">
+                                Product
+                            </th>
+                            <th style="padding:20px; border: 2px solid rgba(17, 17, 17, 0.8);background-color:#808080">
+                                SubTotal
+                            </th>
+                        </tr>
+                        @foreach (var item in ViewBag.cart)
+                        {
+                            <tr>
+                                <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); padding:20px ">
+                                    @item.Product.ProductName
+                                </td>
+                                <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); padding:20px ">
+                                    @(item.Product.ProductPrice * item.Quantity)
+                                </td>
+                            </tr>
+                            }
+                        <tr>
+                            <th style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); padding:20px">
+                                Total
+                            </th>
+                            <td style="vertical-align: middle; border: 2px solid rgba(17, 17, 17, 0.8); padding:20px">
+                                @ViewBag.total
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

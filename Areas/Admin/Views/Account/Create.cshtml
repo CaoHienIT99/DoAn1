@@ -1,0 +1,66 @@
+﻿@model DA1.Models.Domain.User
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+    <div style="margin-left:50px; padding-top:100px;  max-width:1170px; padding-bottom:100px">
+
+        <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">Create</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <table style="margin-top:50px; padding: 20px; text-align: center">
+                        <tr>
+                            <th asp-for="Username" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #1cc88a!important;">User Name</th>
+                            <td> <input asp-for="Username" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="Username" class="text-danger"></span></td>
+                        </tr>
+                        <tr>
+                            <th asp-for="pass" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #ff0000!important">Password</th>
+                            <td> <input asp-for="pass" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="pass" class="text-danger"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th asp-for="Fullname" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #00ffff!important">Full Name</th>
+                            <td> <input asp-for="Fullname" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="Fullname" class="text-danger"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th asp-for="Adress" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #ff6a00!important">Address</th>
+                            <td> <input asp-for="Adress" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="Adress" class="text-danger"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th asp-for="Email" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #4800ff!important">Email</th>
+                            <td> <input asp-for="Email" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="Email" class="text-danger"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th asp-for="Phone" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #ff00dc!important">Phone</th>
+                            <td> <input asp-for="Phone" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="Phone" class="text-danger"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th asp-for="Position" style="padding:20px; border: 1px solid #e5e5e5; border-left: .25rem solid #ff6a00!important">Status</th>
+                            <td> <input asp-for="Position" style="padding:20px; border: 1px solid #e5e5e5; text-align: left!important; width:500px" /></td>
+                            <td><span asp-validation-for="Position" class="text-danger"></span></td>
+                        </tr>
+                    </table>
+                    <div class="form-group" style="padding-top:2.5em">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+

@@ -1,0 +1,51 @@
+﻿@model DA1.Models.Domain.Supplier
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+    <div style="margin-left:50px; padding-top:100px;  max-width:1170px; padding-bottom:100px">
+
+        <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">Edit</h1>
+
+
+
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="SupplierID" />
+                    <div class="form-group">
+                        <label asp-for="SupplierName" class="control-label" style="padding:20px;  border-left: .25rem solid #1cc88a!important;"></label>
+                        <input asp-for="SupplierName" class="form-control" />
+                        <span asp-validation-for="SupplierName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Adress" class="control-label" style="padding:20px; border-left: .25rem solid #ff00dc!important;"></label>
+                        <input asp-for="Adress" class="form-control" />
+                        <span asp-validation-for="Adress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label" style="padding:20px; border-left: .25rem solid #ff0000!important;"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label" style="padding:20px;  border-left: .25rem solid #00ffff!important;"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+    </div>

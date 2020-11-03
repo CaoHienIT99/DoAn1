@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DA1.Models.Domain.OrderDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:50px; padding-top:100px">
+
+    <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">OrderDetails</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #1cc88a!important;">
+                    @Html.DisplayNameFor(model => model.Order)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff00dc!important;">
+                    @Html.DisplayNameFor(model => model.Product)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #ff0000!important;">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th style="padding:20px; border: 1px solid #e5e5e5; border-top: .25rem solid #00ffff!important;">
+                    Price
+                </th>
+                <th style="border:none;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td style="vertical-align: middle; border: 1px solid #e5e5e5; ">
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

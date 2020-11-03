@@ -1,0 +1,66 @@
+﻿@model DA1.Models.ProductDetail
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+<div style="margin-left:50px; padding-top:100px;  max-width:1170px; padding-bottom:100px">
+
+    <h1 style="text-decoration: none; text-transform: uppercase; font-size: 70px; font-weight: 800; ">Create</h1>
+
+    <h4 style="text-decoration: none; text-transform: uppercase; font-size: 50px; font-weight: 800; ">ProductDeatail</h4><hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label" style="padding:20px;  border-left: .25rem solid #1cc88a!important;"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Displacement" class="control-label" style="padding:20px; border-left: .25rem solid #ff00dc!important;"></label>
+                    <input asp-for="Displacement" class="form-control" />
+                    <span asp-validation-for="Displacement" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Maxpower" class="control-label" style="padding:20px; border-left: .25rem solid #ff0000!important;"></label>
+                    <input asp-for="Maxpower" class="form-control" />
+                    <span asp-validation-for="Maxpower" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Topspeed" class="control-label" style="padding:20px;  border-left: .25rem solid #00ffff!important;"></label>
+                    <input asp-for="Topspeed" class="form-control" />
+                    <span asp-validation-for="Topspeed" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TAcceleration" class="control-label" style="padding:20px; border-left: .25rem solid #ff6a00!important;"></label>
+                    <input asp-for="TAcceleration" class="form-control" />
+                    <span asp-validation-for="TAcceleration" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierID" class="control-label" style="padding:20px;border-left: .25rem solid #4800ff!important;"></label>
+                    <select asp-for="SupplierID" class="form-control" asp-items="ViewBag.SupplierID"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Invented" class="control-label" style="padding:20px;border-left: .25rem solid #ff6a00!important;"></label>
+                    <input asp-for="Invented" class="form-control" />
+                    <span asp-validation-for="Invented" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductId" class="control-label" style="padding:20px; border-left: .25rem solid #ff0000!important;"></label>
+                    <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>
